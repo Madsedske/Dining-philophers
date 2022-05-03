@@ -31,7 +31,7 @@ namespace Dining_philophers
             philophers4.Name = "p4";
             philophers5.Name = "p5";
 
-            philophers1.Join();
+            philophers1.Join(); 
             philophers2.Join();
             philophers3.Join();
             philophers4.Join();
