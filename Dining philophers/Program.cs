@@ -42,8 +42,117 @@ namespace Dining_philophers
         {
             while (true)
             {
+                if (forks[4] == false && forks[0] == false)
+                {
+                    Monitor.Enter(_lock);
+                    try
+                    {
+                        Console.WriteLine("Philsopher 1 is eating..");
+                        forks[4] = true;
+                        forks[0] = true;
+                        Thread.Sleep(1000);
+                    }                  
+                    finally
+                    {
+                        forks[4] = false;
+                        forks[0] = false;
+                        Monitor.Exit(_lock);
+                    }
+                }
+                else
+                    Console.WriteLine("Philsopher 1 is waiting...");
 
+                if (forks[0] == false && forks[1] == false)
+                {
+                    Monitor.Enter(_lock);
 
+                    try
+                    {
+                        Console.WriteLine("Philsopher 2 is eating..");
+
+                        forks[0] = true;
+                        forks[1] = true;
+                        Thread.Sleep(1000);
+                    }                  
+                    finally
+                    {
+                        forks[0] = false;
+                        forks[1] = false;
+                        Monitor.Exit(_lock);
+
+                    }
+                }
+                else
+                    Console.WriteLine("Philsopher 2 is waiting...");
+
+                if (forks[1] == false && forks[2] == false)
+                {
+                    Monitor.Enter(_lock);
+
+                    try
+                    {
+                        Console.WriteLine("Philsopher 3 is eating..");
+
+                        forks[1] = true;
+                        forks[2] = true;
+                        Thread.Sleep(1000);
+                    }
+                    
+                    finally
+                    {
+                        forks[1] = false;
+                        forks[2] = false;
+                        Monitor.Exit(_lock);
+
+                    }
+                }
+                else
+                    Console.WriteLine("Philsopher 3 is waiting...");
+
+                if (forks[2] == false && forks[3] == false)
+                {
+                    Monitor.Enter(_lock);
+
+                    try
+                    {
+                        Console.WriteLine("Philsopher 4 is eating..");
+
+                        forks[2] = true;
+                        forks[3] = true;
+                        Thread.Sleep(1000);
+                    }                   
+                    finally
+                    {
+                        forks[2] = false;
+                        forks[3] = false;
+                        Monitor.Exit(_lock);
+
+                    }
+                }
+                else
+                    Console.WriteLine("Philsopher 4 is waiting...");
+
+                if (forks[3] == false && forks[4] == false)
+                {
+                    Monitor.Enter(_lock);
+
+                    try
+                    {
+                        Console.WriteLine("Philsopher 5 is eating..");
+
+                        forks[3] = true;
+                        forks[4] = true; 
+                        Thread.Sleep(1000);
+                    }                   
+                    finally
+                    {
+                        forks[3] = false;
+                        forks[4] = false;
+                        Monitor.Exit(_lock);
+                    }
+                }
+                else
+                    Console.WriteLine("Philsopher 5 is waiting...");
             }
         }
     }
