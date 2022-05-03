@@ -54,6 +54,7 @@ namespace Dining_philophers
                     }                  
                     finally
                     {
+                        Console.WriteLine("Philsopher 1 stops eat..");
                         forks[4] = false;
                         forks[0] = false;
                         Monitor.Exit(_lock);
@@ -76,6 +77,7 @@ namespace Dining_philophers
                     }                  
                     finally
                     {
+                        Console.WriteLine("Philsopher 2 stops eat..");
                         forks[0] = false;
                         forks[1] = false;
                         Monitor.Exit(_lock);
@@ -100,6 +102,7 @@ namespace Dining_philophers
                     
                     finally
                     {
+                        Console.WriteLine("Philsopher 3 stops eat..");
                         forks[1] = false;
                         forks[2] = false;
                         Monitor.Exit(_lock);
@@ -123,6 +126,7 @@ namespace Dining_philophers
                     }                   
                     finally
                     {
+                        Console.WriteLine("Philsopher 4 stops eat..");
                         forks[2] = false;
                         forks[3] = false;
                         Monitor.Exit(_lock);
@@ -146,6 +150,7 @@ namespace Dining_philophers
                     }                   
                     finally
                     {
+                        Console.WriteLine("Philsopher 5 stops eat..");
                         forks[3] = false;
                         forks[4] = false;
                         Monitor.Exit(_lock);
